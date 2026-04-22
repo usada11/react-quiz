@@ -26,8 +26,8 @@ export default function QuizPage() {
       const correctNum = answerLogs.filter(answer => answer == true);
       navigation(ROUTES.RESULT, {
         state: {
-          maxQuizlen: MAX_QUIZ_LEN,
-          correctNum: correctNum
+          maxQuizLen: MAX_QUIZ_LEN, //Locationで取っている
+          correctNumLen: correctNum.length //何問正解したかの値
         },
       });
     }
