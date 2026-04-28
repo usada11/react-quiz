@@ -10,19 +10,19 @@ const quizData = [
     answerIndex: 1
   },
   {
-    question: "Question 3",
-    options: ["Select 1", "Serect 2", "Select 3", "Serect 4"],
-    answerIndex: 2
-  },
-  {
-    question: "Question 4",
-    options: ["Select 1", "Serect 2", "Select 3", "Serect 4"],
+    question: "Reactにおいて、コンポーネントの「状態」を管理するために最も一般的に使用されるHookは何か？",
+    options: ["関数型更新", "スプレッド構文", "useEffect", "useState"],
     answerIndex: 3
   },
   {
-    question: "Question 5",
-    options: ["Select 1", "Serect 2", "Select 3", "Serect 4"],
-    answerIndex: 1
+    question: "useEffectの第2引数に空の配列 [] を渡した場合、その副作用はいつ実行されるか？",
+    options: ["コンポーネントが破棄される直前のみ実行", "コンポーネントが更新されるたび実行", "一度も実行されない", "初回レンダリング（マウント）時のみ実行"],
+    answerIndex: 3
+  },
+  {
+    question: "コンポーネントがアンマウントされる際にクリーンアップ処理を行うには、useEffect内で何をすべきか？",
+    options: ["関数をリターンする", "window.unlaodイベントを使用", "useEffectnの第2引数にnullを渡す", "別のuseEffectを定義"],
+    answerIndex: 0
   },
 ];
 
