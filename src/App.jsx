@@ -5,6 +5,7 @@ import { ROUTES } from './const'
 import HomePage from './pages/HomePage'
 import QuizPage from './pages/QuizPage'
 import ResultPage from './pages/ResultPage'
+import AnswerPage from './pages/AnswerPage'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path={ROUTES.HOME} element={<HomePage />} />
         <Route path={ROUTES.QUIZ} element={<QuizPage />} />
         <Route path={ROUTES.RESULT} element={<ResultPage />} />
+        <Route path={ROUTES.ANSWER} element={<AnswerPage />} />
       </Routes>
     </BrowserRouter>
   )

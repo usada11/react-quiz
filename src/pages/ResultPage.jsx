@@ -24,6 +24,9 @@ export default function ResultPage() {
       <Link to={ROUTES.QUIZ}>もう一度チャレンジ</Link>
       <br />
       <br />
+      <Link to={ROUTES.ANSWER}>答え合わせ</Link>
+      <br />
+      <br />
       <Link to={ROUTES.HOME}>ホームに戻る</Link>
     </>
   );
