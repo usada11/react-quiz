@@ -13,21 +13,20 @@ export default function QuizPage() {
   const MAX_QUIZ_LEN = quizData.length;
 
   const handleClick = (clickedIndex) => {
-    if (clickedIndex === quizData[quizIndex].answerIndex) {
-      setAnswerLogs(prev => [...prev, true]);
-    } else {
-      setAnswerLogs(prev => [...prev, false]);
-    }
-    setQuizIndex(prev => prev + 1);
+    setAnswerLogs((prev) => [...prev, clickedIndex]);
+    setQuizIndex((prev) => prev + 1);
   };
 
   useEffect(() => {
+    // 正解，不正解のログがMAX_QUIZ_LENに達したら、ResultPageに遷移する
+    // indexで回答番号を取得
     if (answerLogs.length === MAX_QUIZ_LEN) {
-      const correctNum = answerLogs.filter(answer => answer == true);
+      const correctNum = answerLogs.filter((answer,index) => answer === quizData[index].answerIndex);
       navigation(ROUTES.RESULT, {
         state: {
           maxQuizLen: MAX_QUIZ_LEN, //Locationで取っている
-          correctNumLen: correctNum.length //何問正解したかの値
+          correctNumLen: correctNum.length, //何問正解したかの値
+          answerLogs: answerLogs, // 回答内容
         },
       });
     }
@@ -35,11 +34,16 @@ export default function QuizPage() {
 
   return (
     <>
-      {quizData[quizIndex] && <Display>{`Q.${quizIndex +1} ${quizData[quizIndex].question}`}</Display>}
-      <br/>
-      {quizData[quizIndex] && quizData[quizIndex].options.map((option, index) => 
-          <Button key={`option-${index}`} onClick={() => handleClick(index)}>{option}</Button>
+      {quizData[quizIndex] && (
+        <Display>{`Q.${quizIndex + 1} ${quizData[quizIndex].question}`}</Display>
       )}
+      <br />
+      {quizData[quizIndex] &&
+        quizData[quizIndex].options.map((option, index) => (
+          <Button key={`option-${index}`} onClick={() => handleClick(index)}>
+            {option}
+          </Button>
+        ))}
     </>
   );
 }

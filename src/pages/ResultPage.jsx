@@ -10,6 +10,7 @@ export default function ResultPage() {
   const location = useLocation();
   const maxQuizLen = location.state.maxQuizLen;
   const correctNumLen = location.state.correctNumLen;
+  const answerLogs = location.state.answerLogs;
 
   useEffect(() => {
     setTimeout(() => setActive(true),3000)
@@ -24,7 +25,10 @@ export default function ResultPage() {
       <Link to={ROUTES.QUIZ}>もう一度チャレンジ</Link>
       <br />
       <br />
-      <Link to={ROUTES.ANSWER}>答え合わせ</Link>
+      {/* answerLogsで回答を渡す */}
+      <Link to={ROUTES.ANSWER}state={{ answerLogs }}>
+        答え合わせ
+      </Link>
       <br />
       <br />
       <Link to={ROUTES.HOME}>ホームに戻る</Link>
