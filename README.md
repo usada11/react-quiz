@@ -20,10 +20,9 @@ Reactで作成したインタラクティブなクイズアプリケーション
 
 ##  使用技術 (Tech Stack)
 
-- **フロントエンド**: React (TypeScript / JavaScript), HTML5, CSS3 / Tailwind CSS
-- **状態管理**: React Hooks (`useState`, `useReducer`, `useContext`)
-- **ビルドツール**: Vite (または Create React App)
-- **デプロイ**: Vercel (または GitHub Pages)
+- **フロントエンド**: React (JavaScript)
+- **状態管理**: React Hooks 
+- **ビルドツール**: Vite 
 
 ---
 
